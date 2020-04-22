@@ -1,0 +1,52 @@
+Relational Databases
+-----------------------------------
+colloction of rows === a table
+Each one of those rows === a record
+
+
+Features
+--------------------------------
+Gift names and data types to columns
+Each row has a unique idenifier (primary key)
+Columns can "link" to other columns in separate tables (foreign keys)
+
+
+SQL
+
+SELECT <columns> FROM <table> WHERE <column> = <value>;
+
+// searching based on name
+SELECT email FROM users WHERE name = 'Candace Wilson';
+
+
+
+Data Definition Language (DQL)
+--------------------------------
+SELECT <columns> FROM <table> WHERE <column> = <value>;
+
+
+Data Manipulation Lanuage (DML)
+--------------------------------
+**** INSERT INTO <table> (<columns>)  VALUES (<values>);
+
+INSERT INTO "Category" ("CategoryName", "Description")
+VALUES ('Frozen', 'Ready-to-eat meals');
+
+////////////////////////////////////////////////////////////////////////
+
+**** UPDATE <table> SET <column> = <new value> WHERE <column> = <value>;
+
+UPDATE "Category" 
+SET "Description" = 'Desserts and ready-to-eat meals'
+WHERE "Id" = 9;
+
+**** DELETE FROM <table> WHERE <column> = <value>;
+DELETE FROM "Category" WHERE "Id" = 9;
+
+Different levels of Database Abstraction in JavaScript
+----------------------------------------------------------------
+- No abstraction, write SQL statements and send them directly to the Database
+- ORM (Object Relation Mapper) , high level of abstraction
+- Query Builder, a library that allows us to write SQL with Javascrip functions.
+    table.insert({}).into("table_name") instead of INSERT INTO table_name VALUES ();
+        Knexjs.org
